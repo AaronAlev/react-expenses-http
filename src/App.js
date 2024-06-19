@@ -43,9 +43,29 @@ const App = () => {
   };
 
   const addExpenseHandler = (expense) => {
-    setExpenses((prevExpenses) => {
-      return [expense, ...prevExpenses];
-    });
+    const addExpense = async (expense) => {
+      try {
+          const response = await fetch('http://localhost:3001/add-expense', {
+            method: 'POST',
+            body: JSON.stringify(expense),
+            headers: {
+              'Content-Type': 'application/json'
+            }
+          })
+          const responseData = await response.json();
+          if (!response.ok) {
+            throw new Error('Failed saving expense');
+          }
+          setExpenses([expense, ...expenses])
+      } catch (error) {
+        setError({
+          title: 'An error occurred!',
+          message: 'Failed to add expense. Please try again.'
+        })
+        setShowError(true);
+      }
+    }
+    addExpense(expense);
   };
 
   return (

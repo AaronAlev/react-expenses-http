@@ -23,9 +23,13 @@ const Expenses= (props) => {
                 filteredExpenses.length === 0 && <h2>No expenses found</h2>
             }
             {
+                props.isFetching && <h2>Fetching data</h2>
+            }
+            {
                 filteredExpenses.length > 0 && filteredExpenses.map((expense) => {
                     return <ExpenseItem key={expense.id} expenseData={expense}/>
                 })
+                
             }
         </Card>
     );

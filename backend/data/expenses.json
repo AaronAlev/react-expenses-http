@@ -1,0 +1,19 @@
+[{
+    "id": "id1",
+    "date": "2024-08-07T00:00:00.000Z",
+    "title": "Car Insurance",
+    "amount": 294.67
+  },
+  {
+    "id": "id2",
+    "date": "2024-08-09T20:00:00.000Z",
+    "title": "Library book overdue",
+    "amount": 1.45
+  },
+  {
+    "id": "id3",
+    "date": "2024-08-08T10:00:00.000Z",
+    "title": "Bandages",
+    "amount": 12.59
+  }
+]
